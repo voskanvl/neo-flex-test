@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic)
+body
+    font-family: 'Montserrat', sans-serif
+.header
+    display: flex
+    justify-content: space-between
+
+.marks
+    display: flex
+    justify-content: space-between
+
+.mark
+    position: relative
+    width: 62px
+    height: 60px
+    &__volume
+        position: absolute
+        top: 12px
+        right: 10px
+        background: #FFA542
+        text-align: center
+        border-radius: 50%
+        height: 18px
+        width: 17.4px
+        color: #fff
+        z-index: 2
+        font-size: 15px
+    &__svg
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
