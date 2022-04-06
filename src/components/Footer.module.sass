@@ -1,0 +1,46 @@
+$padding_footer: 27px
+.footer
+    height: 149px
+    background: #fff
+    border-radius: 30px 30px 0 0
+    padding: $padding_footer
+    position: absolute
+    bottom: 0
+    left: 1rem
+    right: 1rem
+
+.references
+    max-width: 427px
+    position: absolute
+    top: $padding_footer
+    left: 50%
+    transform: translateX(-50%)
+    display: grid
+    grid-template-columns: 2fr 1fr
+    & a
+        color: #000
+        text-decoration: none
+    &__leftside
+        display: flex
+        flex-direction: column
+        & > a
+            margin: 5px 0
+
+    &__rightside
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__international
+        display: flex
+        justify-content: start
+        gap: 1rem
+
+.socials
+    position: absolute
+    top: $padding_footer
+    right: $padding_footer
+    display: flex
+    & > a
+        margin: 0 .5rem
+        display: grid
+        place-items: center
