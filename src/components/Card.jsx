@@ -7,7 +7,9 @@ export const Card = ({ img, title, price, previousPrice, discount, rate }) => {
 
             <div className="data card__data">
                 <h2 className="data__title">{title}</h2>
-                <div className="data__pricing">
+                <div
+                    className="data__pricing"
+                    style={{ color: discount ? "red" : "" }}>
                     <div className="data__currentprice">
                         <div className="data__price">{price}</div>
                         <div

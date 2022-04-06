@@ -1,5 +1,4 @@
 import { Card } from "./Card";
-import img from "../assets/Image-1.png";
 import { useStore } from "effector-react";
 import { data } from "../effector/";
 
