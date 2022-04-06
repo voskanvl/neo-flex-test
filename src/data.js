@@ -52,14 +52,6 @@ export const data = {
         },
         {
             id: 7,
-            img: "assets/image-2.png",
-            title: "Apple EarPods",
-            price: 2327,
-            rate: 4.5,
-            wireless: false,
-        },
-        {
-            id: 8,
             img: "assets/image-5.png",
             title: "Apple AirPods",
             price: 9527,
@@ -67,7 +59,7 @@ export const data = {
             wireless: true,
         },
         {
-            id: 9,
+            id: 8,
             img: "assets/image-3.png",
             title: "GERLAX GH-04",
             price: 6527,
@@ -75,7 +67,7 @@ export const data = {
             wireless: true,
         },
         {
-            id: 10,
+            id: 9,
             img: "assets/image-4.png",
             title: "BOROFONE BO4",
             price: 7527,
