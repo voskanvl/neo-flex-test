@@ -2,15 +2,17 @@ import "./App.sass";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import { Footer } from "./components/Footer";
-import { data } from "./effector/";
+import { attention, data } from "./effector/";
+import { Modal } from "./components/Modal";
 
 function App() {
     data.getDataFx();
     return (
         <div className="App">
-            <Header></Header>
-            <Main></Main>
-            <Footer></Footer>
+            <Header />
+            <Main />
+            <Footer />
+            <Modal />
         </div>
     );
 }

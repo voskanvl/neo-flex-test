@@ -1,17 +1,13 @@
 import { memo } from "react";
-import {
-    incrementProductVolume,
-    decrementProductVolume,
-    removetProduct,
-} from "../../effector/basket.effector";
+import { basket, attention } from "../../effector/";
 import style from "./BasketCard.module.sass";
 import { Counter } from "./Counter/Counter";
 
 export const BasketCard = memo(({ id, img, title, price, volume }) => {
     const handleChage = val => {
         const map = {
-            inc: incrementProductVolume,
-            dec: decrementProductVolume,
+            inc: basket.incrementProductVolume,
+            dec: basket.decrementProductVolume,
         };
         map[val](id);
     };
@@ -32,7 +28,7 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
             <div className={style.basket__totalscore}>
                 <button
                     className={style.basket__remove}
-                    onClick={() => removetProduct(id)}>
+                    onClick={() => attention.show(id)}>
                     <svg
                         width="21"
                         height="17"

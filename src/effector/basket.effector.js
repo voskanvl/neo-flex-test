@@ -17,7 +17,7 @@ export const addProductFx = createEffect(async id => {
 
 export const incrementProductVolume = createEvent();
 export const decrementProductVolume = createEvent();
-export const removetProduct = createEvent();
+export const removeProduct = createEvent();
 
 addProductFx.done.watch(e => console.log("addProductFx", e));
 
@@ -58,7 +58,7 @@ export const $basket = createStore([])
         if (productIndex !== -1) newState[productIndex].volume++;
         return newState;
     })
-    .on(removetProduct, (state, id) => {
+    .on(removeProduct, (state, id) => {
         const newState = [...state];
         const productIndex = state.findIndex(e => e.id === id);
         if (productIndex !== -1) newState.splice(productIndex, 1);
