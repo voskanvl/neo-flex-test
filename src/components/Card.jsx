@@ -17,7 +17,11 @@ export const Card = ({
                 <div className="data__pricing">
                     <div className="data__currentprice">
                         <div className="data__price">{price}</div>
-                        <div className="data__discount">{discount}</div>
+                        <div
+                            className="data__discount"
+                            style={{ display: discount ? "block" : "none" }}>
+                            {discount}
+                        </div>
                     </div>
                     <div className="data__previousprice">{previousPrice}</div>
                 </div>
