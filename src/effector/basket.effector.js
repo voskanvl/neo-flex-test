@@ -8,7 +8,7 @@ export const addProductFx = createEffect(async id => {
 
 addProductFx.done.watch(e => console.log("addProductFx", e));
 
-export const $isVisible = restore(show, false);
+export const $isVisible = restore(show, true);
 export const $basket = createStore([]).on(addProductFx.done, (state, r) => [
     ...state,
     r.result[0],
