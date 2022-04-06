@@ -1,6 +1,9 @@
+import { basket } from "../effector";
+import { useStore } from "effector-react";
 export const Basket = () => {
+    const value = useStore(basket.$isVisible);
     return (
-        <div className="mark">
+        <div className="mark" onClick={() => basket.show(!value)}>
             <div className="mark__volume">2</div>
             <svg
                 className="mark__svg"
