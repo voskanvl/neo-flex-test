@@ -2,7 +2,7 @@ export const data = {
     headphones: [
         {
             id: 1,
-            img: "../src/assets/Image.png",
+            img: "assets/Image.png",
             title: "Apple BYZ S852I",
             price: 2927,
             previousPrice: 3527,
