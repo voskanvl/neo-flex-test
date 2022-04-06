@@ -1,7 +1,8 @@
 export const data = {
     headphones: [
         {
-            img: "assets/image.png",
+            id: 1,
+            img: "../src/assets/Image.png",
             title: "Apple BYZ S852I",
             price: 2927,
             previousPrice: 3527,
@@ -9,6 +10,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 2,
             img: "assets/image-1.png",
             title: "Apple EarPods",
             price: 2327,
@@ -16,6 +18,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 3,
             img: "assets/image-2.png",
             title: "Apple EarPods",
             price: 2327,
@@ -23,6 +26,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 4,
             img: "assets/image.png",
             title: "Apple BYZ S852I",
             price: 2927,
@@ -31,6 +35,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 5,
             img: "assets/image-1.png",
             title: "Apple EarPods",
             price: 2327,
@@ -38,6 +43,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 6,
             img: "assets/image-2.png",
             title: "Apple EarPods",
             price: 2327,
@@ -45,6 +51,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 7,
             img: "assets/image-2.png",
             title: "Apple EarPods",
             price: 2327,
@@ -52,6 +59,7 @@ export const data = {
             wireless: false,
         },
         {
+            id: 8,
             img: "assets/image-5.png",
             title: "Apple AirPods",
             price: 9527,
@@ -59,6 +67,7 @@ export const data = {
             wireless: true,
         },
         {
+            id: 9,
             img: "assets/image-3.png",
             title: "GERLAX GH-04",
             price: 6527,
@@ -66,6 +75,7 @@ export const data = {
             wireless: true,
         },
         {
+            id: 10,
             img: "assets/image-4.png",
             title: "BOROFONE BO4",
             price: 7527,
