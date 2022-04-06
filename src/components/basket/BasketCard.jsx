@@ -2,6 +2,7 @@ import { memo } from "react";
 import {
     incrementProductVolume,
     decrementProductVolume,
+    removetProduct,
 } from "../../effector/basket.effector";
 import style from "./BasketCard.module.sass";
 import { Counter } from "./Counter/Counter";
@@ -27,7 +28,9 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
                 <div className={style.basket__price}>{price}&#8381;</div>
             </div>
             <div className={style.basket__totalscore}>
-                <div className={style.basket__remove}>
+                <button
+                    className={style.basket__remove}
+                    onClick={() => removetProduct(id)}>
                     <svg
                         width="21"
                         height="17"
@@ -39,7 +42,7 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
                             fill="#DF6464"
                         />
                     </svg>
-                </div>
+                </button>
                 <div className={style.basket__total}>
                     {price * volume}&#8381;
                 </div>
