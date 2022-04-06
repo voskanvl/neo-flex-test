@@ -1,1 +1,2 @@
-export const Logo = () => <div>Logo</div>;
+import style from "./Logo.module.css";
+export const Logo = () => <div className={style.logo}>qpick</div>;
