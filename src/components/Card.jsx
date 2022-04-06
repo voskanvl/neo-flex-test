@@ -11,14 +11,18 @@ export const Card = ({ img, title, price, previousPrice, discount, rate }) => {
                     className="data__pricing"
                     style={{ color: discount ? "red" : "" }}>
                     <div className="data__currentprice">
-                        <div className="data__price">{price}</div>
+                        <div className="data__price">{price}&#8381;</div>
                         <div
                             className="data__discount"
                             style={{ display: discount ? "block" : "none" }}>
                             {discount}
                         </div>
                     </div>
-                    <div className="data__previousprice">{previousPrice}</div>
+                    <div
+                        className="data__previousprice"
+                        style={{ display: previousPrice ? "block" : "none" }}>
+                        {previousPrice}&#8381;
+                    </div>
                 </div>
                 <div className="data__rating">
                     <svg
