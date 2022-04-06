@@ -3,7 +3,7 @@ import { basket, attention } from "../../effector/";
 import style from "./BasketCard.module.sass";
 import { Counter } from "./Counter/Counter";
 
-export const BasketCard = memo(({ id, img, title, price, volume }) => {
+export const BasketCard = memo(({ id, img, webp, title, price, volume }) => {
     const handleChage = val => {
         const map = {
             inc: basket.incrementProductVolume,
@@ -15,7 +15,11 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
         <div className={style.basket}>
             <div className={style.basket__img_n_counter}>
                 <div className={style.basket__img}>
-                    <img src={img} alt={title} />
+                    <picture>
+                        <source type="image/webp" srcSet={webp} />
+                        <source type="image/jpeg" srcSet={img} />
+                        <img src={img} alt={title} />
+                    </picture>
                 </div>
                 <Counter value={volume} onChange={handleChage} />
             </div>

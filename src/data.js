@@ -3,6 +3,7 @@ export const data = {
         {
             id: 1,
             img: "assets/Image.png",
+            webp: "assets/Image.webp",
             title: "Apple BYZ S852I",
             price: 2927,
             previousPrice: 3527,
@@ -12,6 +13,7 @@ export const data = {
         {
             id: 2,
             img: "assets/image-1.png",
+            webp: "assets/image-1.webp",
             title: "Apple EarPods",
             price: 2327,
             rate: 4.5,
@@ -20,6 +22,7 @@ export const data = {
         {
             id: 3,
             img: "assets/image-2.png",
+            webp: "assets/image-2.webp",
             title: "Apple EarPods",
             price: 2327,
             rate: 4.5,
@@ -28,6 +31,7 @@ export const data = {
         {
             id: 4,
             img: "assets/image.png",
+            webp: "assets/image.webp",
             title: "Apple BYZ S852I",
             price: 2927,
             rate: 4.7,
@@ -37,6 +41,7 @@ export const data = {
         {
             id: 5,
             img: "assets/image-1.png",
+            webp: "assets/image-1.webp",
             title: "Apple EarPods",
             price: 2327,
             rate: 4.5,
@@ -45,6 +50,7 @@ export const data = {
         {
             id: 6,
             img: "assets/image-2.png",
+            webp: "assets/image-2.webp",
             title: "Apple EarPods",
             price: 2327,
             rate: 4.5,
@@ -53,6 +59,7 @@ export const data = {
         {
             id: 7,
             img: "assets/image-5.png",
+            webp: "assets/image-5.webp",
             title: "Apple AirPods",
             price: 9527,
             rate: 4.7,
@@ -61,6 +68,7 @@ export const data = {
         {
             id: 8,
             img: "assets/image-3.png",
+            webp: "assets/image-3.webp",
             title: "GERLAX GH-04",
             price: 6527,
             rate: 4.7,
@@ -69,6 +77,7 @@ export const data = {
         {
             id: 9,
             img: "assets/image-4.png",
+            webp: "assets/image-4.webp",
             title: "BOROFONE BO4",
             price: 7527,
             rate: 4.7,

@@ -2,6 +2,7 @@ import { basket } from "../effector";
 export const Card = ({
     id,
     img,
+    webp,
     title,
     price,
     previousPrice,
@@ -12,7 +13,11 @@ export const Card = ({
     return (
         <div className="card">
             <div className="card__img">
-                <img src={img} alt={title} />
+                <picture>
+                    <source type="image/webp" srcSet={webp} />
+                    <source type="image/jpeg" srcSet={img} />
+                    <img src={img} alt={title} />
+                </picture>
             </div>
 
             <div className="data card__data">
