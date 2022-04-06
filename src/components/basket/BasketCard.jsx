@@ -6,61 +6,44 @@ import {
 import style from "./BasketCard.module.sass";
 import { Counter } from "./Counter/Counter";
 
-export const BasketCard = memo(
-    ({ id, img, title, price, previousPrice, discount, rate, volume }) => {
-        const handleChage = val => {
-            const map = {
-                inc: incrementProductVolume,
-                dec: decrementProductVolume,
-            };
-            map[val](id);
+export const BasketCard = memo(({ id, img, title, price, volume }) => {
+    const handleChage = val => {
+        const map = {
+            inc: incrementProductVolume,
+            dec: decrementProductVolume,
         };
-        return (
-            <div className={style.basketCard}>
-                <div className={style.basketCard__img}>
+        map[val](id);
+    };
+    return (
+        <div className={style.basket}>
+            <div className={style.basket__img_n_counter}>
+                <div className={style.basket__img}>
                     <img src={img} alt={title} />
                 </div>
                 <Counter value={volume} onChange={handleChage} />
-                <div className="data card__data">
-                    <h2 className="data__title">{title}</h2>
-                    <div
-                        className="data__pricing"
-                        style={{ color: discount ? "red" : "" }}>
-                        <div className="data__currentprice">
-                            <div className="data__price">{price}&#8381;</div>
-                            <div
-                                className="data__discount"
-                                style={{
-                                    display: discount ? "block" : "none",
-                                }}>
-                                {discount}
-                            </div>
-                        </div>
-                        <div
-                            className="data__previousprice"
-                            style={{
-                                display: previousPrice ? "block" : "none",
-                            }}>
-                            {previousPrice}&#8381;
-                        </div>
-                    </div>
-                    <div className="data__rating">
-                        <svg
-                            className="data__ratestar"
-                            width="25"
-                            height="23"
-                            viewBox="0 0 25 23"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.6268 17.6614L5.41618 22.0127L7.37647 13.892L0.960754 8.46201L9.38215 7.79538L12.6268 0.0867653L15.8715 7.79538L24.2941 8.46201L17.8771 13.892L19.8374 22.0127L12.6268 17.6614Z"
-                                fill="#FFCE7F"
-                            />
-                        </svg>
-                        <div className="data__rate">{rate}</div>
-                    </div>
+            </div>
+            <div className={style.basket__data}>
+                <div className={style.basket__title}>{title}</div>
+                <div className={style.basket__price}>{price}&#8381;</div>
+            </div>
+            <div className={style.basket__totalscore}>
+                <div className={style.basket__remove}>
+                    <svg
+                        width="21"
+                        height="17"
+                        viewBox="0 0 21 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.8848 3.4H20.8667V5.1H18.874V16.15C18.874 16.3754 18.769 16.5916 18.5821 16.751C18.3953 16.9104 18.1418 17 17.8776 17H3.92813C3.66387 17 3.41044 16.9104 3.22358 16.751C3.03672 16.5916 2.93174 16.3754 2.93174 16.15V5.1H0.938965V3.4H5.92091V0.85C5.92091 0.624566 6.02589 0.408365 6.21275 0.248959C6.3996 0.0895533 6.65304 0 6.9173 0H14.8884C15.1527 0 15.4061 0.0895533 15.593 0.248959C15.7798 0.408365 15.8848 0.624566 15.8848 0.85V3.4ZM16.8812 5.1H4.92452V15.3H16.8812V5.1ZM12.3117 10.2L14.0734 11.7028L12.6645 12.9047L10.9029 11.4019L9.14124 12.9047L7.73234 11.7028L9.49396 10.2L7.73234 8.6972L9.14124 7.4953L10.9029 8.9981L12.6645 7.4953L14.0734 8.6972L12.3117 10.2ZM7.91369 1.7V3.4H13.892V1.7H7.91369Z"
+                            fill="#DF6464"
+                        />
+                    </svg>
+                </div>
+                <div className={style.basket__total}>
+                    {price * volume}&#8381;
                 </div>
             </div>
-        );
-    },
-);
+        </div>
+    );
+});

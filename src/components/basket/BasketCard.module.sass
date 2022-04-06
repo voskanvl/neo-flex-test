@@ -1,12 +1,42 @@
-.basketCard
-    box-sizing: border-box
-    padding: 27px 1rem
+.basket
+
+    padding: 1rem
     margin: 1rem 0
-    max-width: 350px
+    max-width: 633px
     background: #fff
     border-radius: 30px
     box-shadow: 0 0 20px rgba(0,0,0,10%)
     flex: 1 1 30%
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1fr 3fr 1fr
+    place-itens: center
+    grid-column-gap: 23px
+    &__totalscore
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: start
+        & > *
+            width: 100%
+            text-align: right
+    &__data
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__title
+        font-weight: 500
+        margin-bottom: 12px
+    &__price
+        color: #aaa
+        font-weight: 600
+        font-size: 15px
+    &__img
+        max-width: 147px
+        height: 136px
+        & > img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    &__total
+        font-size: 15px
+        font-weight: 600
