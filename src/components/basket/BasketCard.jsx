@@ -25,7 +25,9 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
             </div>
             <div className={style.basket__data}>
                 <div className={style.basket__title}>{title}</div>
-                <div className={style.basket__price}>{price}&#8381;</div>
+                <div className={style.basket__price}>
+                    {Number(price).toLocaleString("ru")}&#8381;
+                </div>
             </div>
             <div className={style.basket__totalscore}>
                 <button
@@ -44,7 +46,7 @@ export const BasketCard = memo(({ id, img, title, price, volume }) => {
                     </svg>
                 </button>
                 <div className={style.basket__total}>
-                    {price * volume}&#8381;
+                    {Number(price * volume).toLocaleString("ru")}&#8381;
                 </div>
             </div>
         </div>

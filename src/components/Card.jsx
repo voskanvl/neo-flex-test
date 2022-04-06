@@ -20,7 +20,9 @@ export const Card = ({
                     className="data__pricing"
                     style={{ color: discount ? "red" : "" }}>
                     <div className="data__currentprice">
-                        <div className="data__price">{price}&#8381;</div>
+                        <div className="data__price">
+                            {Number(price).toLocaleString("ru")}&#8381;
+                        </div>
                         <div
                             className="data__discount"
                             style={{ display: discount ? "block" : "none" }}>
@@ -30,7 +32,7 @@ export const Card = ({
                     <div
                         className="data__previousprice"
                         style={{ display: previousPrice ? "block" : "none" }}>
-                        {previousPrice}&#8381;
+                        {Number(previousPrice).toLocaleString("ru")}&#8381;
                     </div>
                 </div>
                 <div className="data__rating">
