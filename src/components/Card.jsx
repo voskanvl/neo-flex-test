@@ -1,15 +1,8 @@
-export const Card = ({
-    image,
-    title,
-    price,
-    previousPrice,
-    discount,
-    rate,
-}) => {
+export const Card = ({ img, title, price, previousPrice, discount, rate }) => {
     return (
         <div className="card">
             <div className="card__img">
-                <img src={image} alt={title} />
+                <img src={img} alt={title} />
             </div>
 
             <div className="data card__data">
