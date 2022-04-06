@@ -1,47 +1,84 @@
-import { createStore, createEffect, restore, createEvent } from "effector";
+import {
+    createStore,
+    createEffect,
+    restore,
+    createEvent,
+    sample,
+} from "effector";
 import { data } from "../data";
 
 export const show = createEvent("show");
 
-export const $isVisible = restore(show, true);
-/*
-{
-    id:number,
-    product:{id:number, price: number ....},
-    volume: number
-}
-*/
+export const $isVisible = restore(show, false);
+
 export const addProductFx = createEffect(async id => {
     return data.headphones.filter(headphone => headphone.id === id);
 });
 
+export const incrementProductVolume = createEvent();
+export const decrementProductVolume = createEvent();
+export const removetProduct = createEvent();
+
 addProductFx.done.watch(e => console.log("addProductFx", e));
 
-export const $basket = createStore([]).on(addProductFx.done, (state, res) => {
-    const hasInState = state.findIndex(e => e.id === res.params);
-    if (hasInState !== -1) {
-        const newState = [...state];
-        newState.splice(hasInState, 1);
+export const $basket = createStore([])
+    .on(addProductFx.done, (state, res) => {
+        /*
+        {
+            id:number,
+            product:{id:number, price: number ....},
+            volume: number
+        }
+    */
+        const hasInState = state.findIndex(e => e.id === res.params);
+        if (hasInState !== -1) {
+            const newState = [...state];
+            newState.splice(hasInState, 1);
+            return [
+                ...newState,
+                {
+                    id: res.params,
+                    product: res.result[0],
+                    volume: state[hasInState]["volume"] + 1,
+                },
+            ];
+        }
         return [
-            ...newState,
+            ...state,
             {
                 id: res.params,
                 product: res.result[0],
-                volume: state[hasInState]["volume"] + 1,
+                volume: 1,
             },
         ];
-    }
-    return [
-        ...state,
-        {
-            id: res.params,
-            product: res.result[0],
-            volume: 1,
-        },
-    ];
-});
+    })
+    .on(incrementProductVolume, (state, id) => {
+        const newState = [...state];
+        const productIndex = state.findIndex(e => e.id === id);
+        if (productIndex !== -1) newState[productIndex].volume++;
+        return newState;
+    })
+    .on(removetProduct, (state, id) => {
+        const newState = [...state];
+        const productIndex = state.findIndex(e => e.id === id);
+        if (productIndex !== -1) newState.splice(productIndex, 1);
+        return newState;
+    });
 
 $basket.watch(e => {
     console.log("$basket", e);
     if (e.length > 1) console.log(Object.is(...e));
+});
+
+sample({
+    clock: decrementProductVolume,
+    source: $basket,
+    fn: (state, id) => {
+        const newState = [...state];
+        const productIndex = state.findIndex(e => e.id === id);
+        if (productIndex !== -1 && newState[productIndex].volume > 1)
+            newState[productIndex].volume--;
+        return newState;
+    },
+    target: $basket,
 });

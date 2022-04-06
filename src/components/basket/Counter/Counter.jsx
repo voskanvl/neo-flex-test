@@ -4,7 +4,7 @@ export const Counter = ({ value, onChange }) => {
         <div className={style.counter}>
             <button
                 className={style.counter__button}
-                onClick={() => onChange(-1)}>
+                onClick={() => onChange("dec")}>
                 <svg
                     width="36"
                     height="30"
@@ -24,7 +24,7 @@ export const Counter = ({ value, onChange }) => {
             <div className={style.counter__value}>{value}</div>
             <button
                 className={style.counter__button}
-                onClick={() => onChange(1)}>
+                onClick={() => onChange("inc")}>
                 <svg
                     width="36"
                     height="30"
