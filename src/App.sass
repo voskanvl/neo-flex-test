@@ -1,13 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic)
 $red: #FFA542
-body
+*
+    box-sizing: border-box
+html
     font-family: 'Montserrat', sans-serif
     background: url("./assets/Background.png")
     font-size: 17px
+
+.App
+    max-width: 1110px
+    margin: 0 auto
 .header
     display: flex
     justify-content: space-between
-
+    align-items: center
+body
+    padding: 0 1rem
+    height: 100vh
 .marks
     display: flex
     justify-content: space-between
@@ -35,18 +44,18 @@ body
         transform: translate(-50%,-50%)
 
 .card
-    padding: 12px
+    box-sizing: border-box
+    padding: 27px 1rem
     margin: 1rem
     max-width: 350px
     background: #fff
-    border-radius: 10%
+    border-radius: 30px
     box-shadow: 0 0 20px rgba(0,0,0,10%)
     &__img
         grid-area: img
         text-align: center
 
 .data
-    margin: 54.2px 18px 26.65px 21.96px
     display: grid
     grid-template-areas: "title price" "rate deal"
     grid-template-rows: 1fr 1fr
@@ -89,3 +98,5 @@ body
         font-weight: bold
         font-family: 'Montserrat', sans-serif
         cursor: pointer
+.red
+    color: $red !important
