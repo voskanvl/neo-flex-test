@@ -1,10 +1,15 @@
 import { basket } from "../effector";
 import { useStore } from "effector-react";
 export const Basket = () => {
-    const value = useStore(basket.$isVisible);
+    const show = useStore(basket.$isVisible);
+    const basketArr = useStore(basket.$basket);
     return (
-        <div className="mark" onClick={() => basket.show(!value)}>
-            <div className="mark__volume">2</div>
+        <div className="mark" onClick={() => basket.show(!show)}>
+            <div
+                className="mark__volume"
+                style={{ display: basketArr.length ? "block" : "none" }}>
+                {basketArr.length}
+            </div>
             <svg
                 className="mark__svg"
                 width="24"

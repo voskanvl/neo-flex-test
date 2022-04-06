@@ -1,4 +1,13 @@
-export const Card = ({ img, title, price, previousPrice, discount, rate }) => {
+import { basket } from "../effector";
+export const Card = ({
+    id,
+    img,
+    title,
+    price,
+    previousPrice,
+    discount,
+    rate,
+}) => {
     return (
         <div className="card">
             <div className="card__img">
@@ -39,7 +48,11 @@ export const Card = ({ img, title, price, previousPrice, discount, rate }) => {
                     </svg>
                     <div className="data__rate">{rate}</div>
                 </div>
-                <button className="data__deal">Купить</button>
+                <button
+                    className="data__deal"
+                    onClick={() => basket.addProductFx(id)}>
+                    Купить
+                </button>
             </div>
         </div>
     );
