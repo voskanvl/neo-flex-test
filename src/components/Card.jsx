@@ -7,6 +7,7 @@ export const Card = ({
     previousPrice,
     discount,
     rate,
+    withDeal = true,
 }) => {
     return (
         <div className="card">
@@ -52,7 +53,8 @@ export const Card = ({
                 </div>
                 <button
                     className="data__deal"
-                    onClick={() => basket.addProductFx(id)}>
+                    onClick={() => basket.addProductFx(id)}
+                    style={{ display: withDeal ? "" : "none" }}>
                     Купить
                 </button>
             </div>

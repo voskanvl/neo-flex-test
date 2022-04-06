@@ -21,14 +21,14 @@ export const Modal = () => {
             className={style.modal}
             style={{ display: isModalShow ? "" : "none" }}>
             <div className={style.modal__body}>
-                <div className={style.madal__message}>{message}</div>
-                <Card {...product} />
+                <div className={style.modal__message}>{message}</div>
+                <Card {...product} withDeal={false} />
                 <div className={style.modal__contols}>
-                    <button className={style.modal__ok} onClick={handleOk}>
+                    <button className={style.modal__button} onClick={handleOk}>
                         Ok
                     </button>
                     <button
-                        className={style.modal__cancel}
+                        className={style.modal__button}
                         onClick={handleCancel}>
                         Отмена
                     </button>
