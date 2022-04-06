@@ -5,14 +5,16 @@ import style from "./BasketList.module.sass";
 export const BasketList = () => {
     const basketArray = useStore(basket.$basket);
     return (
-        <div className={style.basketList}>
-            {basketArray.map(item => (
-                <BasketCard
-                    {...item.product}
-                    key={item.id}
-                    volume={item.volume}
-                />
-            ))}
-        </div>
+        <>
+            <div className={style.basketList}>
+                {basketArray.map(item => (
+                    <BasketCard
+                        {...item.product}
+                        key={item.id}
+                        volume={item.volume}
+                    />
+                ))}
+            </div>
+        </>
     );
 };
