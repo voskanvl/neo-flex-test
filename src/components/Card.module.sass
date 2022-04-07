@@ -1,0 +1,74 @@
+
+$red: #FFA542
+$bg: #eaeaea
+.card
+    box-sizing: border-box
+    padding: 27px 1rem
+    // margin: 15px 30px 15px 0
+
+    max-width: 350px
+    background: #fff
+    border-radius: 30px
+    box-shadow: 0 0 20px rgba(0,0,0,10%)
+    flex: 1 1 30%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &__img
+        grid-area: img
+        text-align: center
+        width: 70%
+        margin: auto
+        padding: 1rem 0
+        & *
+            width: 100%
+            height: 100%
+            object-fit: contain
+
+.data
+    display: grid
+    grid-template-areas: "title price" "rate deal"
+    grid-template-rows: 49px 1fr
+
+    &__title
+        margin: 0
+        grid-area: title
+        justify-self: start
+        font-size: 17px
+        font-weight: bold
+    &__pricing
+        grid-area: price
+        color: $red
+        font-weight: 600
+
+    &__currentprice
+        display: flex
+        justify-content: end
+    &__price
+        text-align: right
+    &__discount
+        margin-left: 1rem
+
+    &__previousprice
+        text-decoration: line-through
+        font-size: 13px
+        text-align: right
+
+    &__rating
+        grid-area: rate
+        display: flex
+        justify-self: start
+        align-items: end
+
+    &__deal
+        margin: 0
+        padding: 0
+        grid-area: deal
+        background: unset
+        border: none
+        text-align: right
+        align-self: end
+        font-size: 1rem
+        font-weight: bold
+        font-family: 'Montserrat', sans-serif
+        cursor: pointer

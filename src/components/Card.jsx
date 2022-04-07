@@ -1,4 +1,5 @@
-import { basket } from "../effector";
+import { basket } from '../effector';
+import style from './Card.module.sass';
 export const Card = ({
     id,
     img,
@@ -11,8 +12,8 @@ export const Card = ({
     withDeal = true,
 }) => {
     return (
-        <div className="card">
-            <div className="card__img">
+        <div className={style.card}>
+            <div className={style.card__img}>
                 <picture>
                     <source type="image/webp" srcSet={webp} />
                     <source type="image/jpeg" srcSet={img} />
@@ -20,30 +21,30 @@ export const Card = ({
                 </picture>
             </div>
 
-            <div className="data card__data">
-                <h2 className="data__title">{title}</h2>
+            <div className={style.data + ' ' + style.card__data}>
+                <h2 className={style.data__title}>{title}</h2>
                 <div
-                    className="data__pricing"
-                    style={{ color: discount ? "red" : "" }}>
-                    <div className="data__currentprice">
-                        <div className="data__price">
-                            {Number(price).toLocaleString("ru")}&#8381;
+                    className={style.data__pricing}
+                    style={{ color: discount ? 'red' : '' }}>
+                    <div className={style.data__currentprice}>
+                        <div className={style.data__price}>
+                            {Number(price).toLocaleString('ru')}&#8381;
                         </div>
                         <div
-                            className="data__discount"
-                            style={{ display: discount ? "block" : "none" }}>
+                            className={style.data__discount}
+                            style={{ display: discount ? 'block' : 'none' }}>
                             {discount}
                         </div>
                     </div>
                     <div
-                        className="data__previousprice"
-                        style={{ display: previousPrice ? "block" : "none" }}>
-                        {Number(previousPrice).toLocaleString("ru")}&#8381;
+                        className={style.data__previousprice}
+                        style={{ display: previousPrice ? 'block' : 'none' }}>
+                        {Number(previousPrice).toLocaleString('ru')}&#8381;
                     </div>
                 </div>
-                <div className="data__rating">
+                <div className={style.data__rating}>
                     <svg
-                        className="data__ratestar"
+                        className={style.data__ratestar}
                         width="25"
                         height="23"
                         viewBox="0 0 25 23"
@@ -54,12 +55,12 @@ export const Card = ({
                             fill="#FFCE7F"
                         />
                     </svg>
-                    <div className="data__rate">{rate}</div>
+                    <div className={style.data__rate}>{rate}</div>
                 </div>
                 <button
-                    className="data__deal"
+                    className={style.data__deal}
                     onClick={() => basket.addProductFx(id)}
-                    style={{ display: withDeal ? "" : "none" }}>
+                    style={{ display: withDeal ? '' : 'none' }}>
                     Купить
                 </button>
             </div>
