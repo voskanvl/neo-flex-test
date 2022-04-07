@@ -1,4 +1,3 @@
-import { Group } from '../Group';
 import style from './BasketOffer.module.sass';
 import { BasketList } from './BasketList';
 import { Total } from './Total';

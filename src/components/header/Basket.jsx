@@ -1,5 +1,5 @@
-import { basket } from "../effector";
-import { useStore } from "effector-react";
+import { basket } from '../../effector';
+import { useStore } from 'effector-react';
 export const Basket = () => {
     const show = useStore(basket.$isVisible);
     const basketArr = useStore(basket.$basket);
@@ -7,7 +7,7 @@ export const Basket = () => {
         <div className="mark" onClick={() => basket.show(!show)}>
             <div
                 className="mark__volume"
-                style={{ display: basketArr.length ? "block" : "none" }}>
+                style={{ display: basketArr.length ? 'block' : 'none' }}>
                 {basketArr.length}
             </div>
             <svg

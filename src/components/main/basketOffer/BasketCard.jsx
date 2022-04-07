@@ -1,7 +1,7 @@
-import { memo } from "react";
-import { basket, attention } from "../../effector/";
-import style from "./BasketCard.module.sass";
-import { Counter } from "./Counter/Counter";
+import { memo } from 'react';
+import { basket, attention } from '../../../effector';
+import style from './BasketCard.module.sass';
+import { Counter } from './Counter/Counter';
 
 export const BasketCard = memo(({ id, img, webp, title, price, volume }) => {
     const handleChage = val => {
@@ -26,7 +26,7 @@ export const BasketCard = memo(({ id, img, webp, title, price, volume }) => {
             <div className={style.basket__data}>
                 <div className={style.basket__title}>{title}</div>
                 <div className={style.basket__price}>
-                    {Number(price).toLocaleString("ru")}&#8381;
+                    {Number(price).toLocaleString('ru')}&#8381;
                 </div>
             </div>
             <div className={style.basket__totalscore}>
@@ -46,7 +46,7 @@ export const BasketCard = memo(({ id, img, webp, title, price, volume }) => {
                     </svg>
                 </button>
                 <div className={style.basket__total}>
-                    {Number(price * volume).toLocaleString("ru")}&#8381;
+                    {Number(price * volume).toLocaleString('ru')}&#8381;
                 </div>
             </div>
         </div>

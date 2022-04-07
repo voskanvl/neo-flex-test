@@ -1,4 +1,4 @@
-import { basket } from '../effector';
+import { basket } from '../../../../effector';
 import style from './Card.module.sass';
 export const Card = ({
     id,

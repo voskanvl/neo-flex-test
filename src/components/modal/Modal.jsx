@@ -1,8 +1,8 @@
-import { useStore } from "effector-react";
-import React from "react";
-import { attention, basket } from "../effector";
-import style from "./Modal.module.sass";
-import { Card } from "./Card";
+import { useStore } from 'effector-react';
+import React from 'react';
+import { attention, basket } from '../../effector';
+import style from './Modal.module.sass';
+import { Card } from '../main/catalog/card/Card';
 
 export const Modal = () => {
     const isModalShow = useStore(attention.$show);
@@ -19,7 +19,7 @@ export const Modal = () => {
     return (
         <div
             className={style.modal}
-            style={{ display: isModalShow ? "" : "none" }}>
+            style={{ display: isModalShow ? '' : 'none' }}>
             <div className={style.modal__body}>
                 <div className={style.modal__message}>{message}</div>
                 <Card {...product} withDeal={false} />
