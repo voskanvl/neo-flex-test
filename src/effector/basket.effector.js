@@ -22,7 +22,7 @@ export const removeProduct = createEvent();
 addProductFx.done.watch(e => console.log("addProductFx", e));
 
 export const $basket = createStore([])
-    .on(addProductFx.done, (state, res) => {
+    .on(addProductFx.done, (state, { params, result: [result] }) => {
         /*
         {
             id:number,
@@ -30,15 +30,15 @@ export const $basket = createStore([])
             volume: number
         }
     */
-        const hasInState = state.findIndex(e => e.id === res.params);
+        const hasInState = state.findIndex(e => e.id === params);
         if (hasInState !== -1) {
             const newState = [...state];
             newState.splice(hasInState, 1);
             return [
                 ...newState,
                 {
-                    id: res.params,
-                    product: res.result[0],
+                    id: params,
+                    product: result,
                     volume: state[hasInState]["volume"] + 1,
                 },
             ];
@@ -46,8 +46,8 @@ export const $basket = createStore([])
         return [
             ...state,
             {
-                id: res.params,
-                product: res.result[0],
+                id: params,
+                product: result,
                 volume: 1,
             },
         ];
