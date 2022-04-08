@@ -1,14 +1,16 @@
-import { Logo } from '../Logo';
-import style from './Footer.module.sass';
-import { useStore } from 'effector-react';
-import { basket } from '../../effector';
+import { Logo } from "../Logo";
+import style from "./Footer.module.sass";
+import { useStore } from "effector-react";
+import { basket } from "../../effector";
 export const Footer = () => {
     const isVisible = useStore(basket.$isVisible);
     return (
         <footer
             className={style.footer}
-            style={{ position: isVisible ? 'fixed' : 'relative' }}>
-            <Logo />
+            style={{ position: isVisible ? "fixed" : "relative" }}>
+            <div className={style.footer__logo}>
+                <Logo />
+            </div>
             <div className={style.references}>
                 <div className={style.references__leftside}>
                     <a href="#">Избранное</a>

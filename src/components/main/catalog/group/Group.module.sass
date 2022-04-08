@@ -7,3 +7,11 @@
 .title
     color: #838383
     margin: 1rem 0
+
+@media (max-width: 768px)
+    .group
+        grid-template-columns: repeat(2, 1fr)
+@media (max-width: 543px)
+    .group
+        grid-template-columns: 1fr
+        place-items: center
